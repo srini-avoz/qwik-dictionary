@@ -18,7 +18,7 @@ export default component$(() => {
       </section>
       <section class="bg-gray-100 shadow-2xl rounded-b-2xl sm:rounded-r-2xl sm:rounded-bl-none">
       {
-      phrase.value?.meanings.map((meaning, index: number) => (
+      phrase.value?.meanings?.map((meaning: Meaning, index: number) => (
         <section 
           key={index} 
           class="py-2 px-4 flex flex-col gap-2 text-[#1d2a57]"
@@ -27,7 +27,7 @@ export default component$(() => {
             { index + 1 }.  { meaning.name }
           </p>
           {
-            meaning.examples.map((example: string, index: number) => (
+            meaning.examples?.map((example: string, index: number) => (
               <p 
                 key={example}
                 class="pl-4 text-md font-medium"
@@ -37,7 +37,7 @@ export default component$(() => {
             ))
           }
           {
-            meaning.media?.length > 0 && (
+            (meaning.media !== undefined)  && (
               <MediaSlider mediaList={meaning.media} />
             )
           }

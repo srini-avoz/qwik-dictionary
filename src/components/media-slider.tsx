@@ -10,16 +10,9 @@ import gsap from "gsap";
 import LeftArrowImg from '~/assets/chevron-left.svg'
 import RightArrowImg from '~/assets/chevron-right.svg'
 
-interface MediaProps {
-  type?: string;
-  url?: string;
-}
-
 interface MediaListProps {
-  mediaList: MediaProps []
+  mediaList: Media[]
 }
-
-
 
 export default component$<MediaListProps>(({mediaList}) => {
   const container = useSignal<HTMLElement>()
@@ -75,10 +68,7 @@ export default component$<MediaListProps>(({mediaList}) => {
     }
   })
 
-  const onTouchStart = $((ev: TouchEvent) => {
-    const posX = ev.touches[0].clientX
-    //startPosX.value = posX
-  })
+  
   return (
     <div 
       ref={container} 
@@ -103,10 +93,9 @@ export default component$<MediaListProps>(({mediaList}) => {
       <section
         id={sliderId}
         class="flex gap-[8px] overflow-hidden"
-        onTouchStart$={onTouchStart}
       >
         {
-          mediaList.map((media: MediaProps) => (
+          mediaList.map((media: Media) => (
             <div key={media.url} class="shrink-0 w-[240px] cursor-pointer slide">
               <video 
                 src={media.url}
