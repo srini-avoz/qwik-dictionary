@@ -30,7 +30,7 @@ const getMatchingPhrases = server$(async function(searchText: string) {
 })
 
 export default component$(() => {
-  const nav = useNavigate();
+  const navigateTo = useNavigate();
   const showResultsMenu = useSignal(false)
   const searchInputRef = useSignal<HTMLElement | undefined>()
   const searchInputText = useSignal('')
@@ -208,6 +208,7 @@ export default component$(() => {
         <picture 
           class="cursor-pointer" 
           title="Click to home"
+          onClick$={() => navigateTo('/')}
         >
           <img 
             src={AppIcon}

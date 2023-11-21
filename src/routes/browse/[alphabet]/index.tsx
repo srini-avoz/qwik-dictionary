@@ -49,7 +49,7 @@ export default component$(() => {
   const loc = useLocation();
   const phrases = usePhrasesStartsWithLetter()
   return (
-    <section class="grid grid-cols-1 m-8 gap-4">
+    <section class="grid grid-cols-1 m-4 gap-4">
       <p class="text-3xl font-lg text-[#1d2a57] pb-4 border-dotted border-b-2">
         Words starting with 
         <span class="pl-2 font-extrabold text-sky-600">
