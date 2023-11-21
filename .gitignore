@@ -42,6 +42,3 @@ lerna-debug.log*
 
 # Cloudflare
 functions/**/*.js
-
-# bun
-bun.lockb
