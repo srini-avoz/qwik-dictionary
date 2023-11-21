@@ -17,34 +17,33 @@ export default component$(() => {
         </p>
       </section>
       <section class="bg-gray-100 shadow-2xl rounded-b-2xl sm:rounded-r-2xl sm:rounded-bl-none">
-      {
-      phrase.value?.meanings?.map((meaning: Meaning, index: number) => (
-        <section 
-          key={index} 
-          class="py-2 px-4 flex flex-col gap-2 text-[#1d2a57]"
-        >
-          <p class="text-xl font-semibold italic">
-            { index + 1 }.  { meaning.name }
-          </p>
-          {
-            meaning.examples?.map((example: string, index: number) => (
-              <p 
-                key={example}
-                class="pl-4 text-md font-medium"
-              >
-                { index+1 }. { example }
+        {
+          phrase.value?.meanings?.map((meaning: Meaning, index: number) => (
+            <section 
+              key={index} 
+              class="py-2 px-4 flex flex-col gap-2 text-[#1d2a57]"
+            >
+              <p class="text-xl font-semibold italic">
+                { index + 1 }.  { meaning.name }
               </p>
-            ))
-          }
-          {
-            (meaning.media !== undefined)  && (
-              <MediaSlider mediaList={meaning.media} />
-            )
-          }
-        </section>
-      ))
-      }
-     
+              {
+                meaning.examples?.map((example: string, index: number) => (
+                  <p 
+                    key={example}
+                    class="pl-4 text-md font-medium"
+                  >
+                    { index+1 }. { example }
+                  </p>
+                ))
+              }
+              {
+                (meaning.media !== undefined && meaning.media.length > 0)  && (
+                  <MediaSlider mediaList={meaning.media} />
+                )
+              }
+            </section>
+          ))
+        }
       </section>
     </section>
   )

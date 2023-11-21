@@ -16,7 +16,7 @@ export const useRandomPhrase = routeLoader$(async function(requestEvent) {
   
   let randomRowId = 1
   if (idList?.length) {
-    randomRowId = Math.floor(Math.random()* idList?.length)
+    randomRowId = Math.floor(Math.random()* idList.length)
     randomRowId = idList[randomRowId].id
   }
 
