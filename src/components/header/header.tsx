@@ -99,7 +99,7 @@ export default component$(() => {
     if (matchedPhrases.value?.includes(searchInputText.value)) {
       if (showResultsMenu.value) showResultsMenu.value = false
       matchedPhrases.value.length = 0
-      nav('/dictionary?search=' + searchInputText.value)
+      navigateTo('/dictionary?search=' + searchInputText.value)
     }
   });
 
