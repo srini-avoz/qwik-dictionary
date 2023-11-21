@@ -25,7 +25,7 @@ export default component$(() => {
     <section 
       class={[`p-2 pl-8 flex flex-col gap-2  text-white 
         rounded-md custom-shadow`, styles.shadow,
-        loc.params.alphabet.length === 1 ? 'bg-gray-200 text-black' : 'bg-gradient-to-br from-indigo-900 to-rose-900']}
+        loc.params.alphabet?.length === 1 ? 'bg-gray-200 text-black' : 'bg-gradient-to-br from-indigo-900 to-rose-900']}
     >
       {!loc.params.alphabet && (
         <h1 
